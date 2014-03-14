@@ -44,7 +44,6 @@
     
     self.searchBar = [UISearchBar new];
     self.searchBar.delegate = self;
-    self.searchBar.showsCancelButton = YES;
 
     CGRect searchFrame = self.searchBar.frame;
     searchFrame.origin.y = 64.0;
@@ -97,22 +96,37 @@
     return cell;
 }
 
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar setText:@""];
     [searchBar resignFirstResponder];
+    [self updateList:searchBar.text];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:NO animated:YES];
     [searchBar resignFirstResponder];
+    [self updateList:searchBar.text];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:YES animated:YES];
+    [self updateList:searchBar.text];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self updateList:searchText];
+}
+
+- (void)updateList:(NSString *)searchText {
     if (searchText.length > 0) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
         self.items = [self.unitedStates filteredArrayUsingPredicate:predicate];
     } else {
         self.items = self.unitedStates;
     }
-    [self.tableView reloadData];
+    [self.tableView  reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
