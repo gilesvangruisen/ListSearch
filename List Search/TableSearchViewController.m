@@ -8,7 +8,7 @@
 
 #import "TableSearchViewController.h"
 
-@interface TableSearchViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface TableSearchViewController () <UITableViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *unitedStates;
@@ -27,7 +27,6 @@
         // Custom initialization
         self.tableView = [UITableView new];
         self.tableView.allowsSelection = NO;
-        self.tableView.delegate = self;
         self.tableView.dataSource = self;
         [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"StateCell"];
         self.unitedStates = @[@"Alabama", @"Alaska", @"Arizona", @"Arkansas", @"California", @"Colorado", @"Connecticut", @"Delaware", @"Florida", @"Georgia", @"Hawaii", @"Idaho", @"Illinois", @"Indiana", @"Iowa", @"Kansas", @"Kentucky", @"Louisiana", @"Maine", @"Maryland", @"Massachusetts", @"Michigan", @"Minnesota", @"Mississippi", @"Missouri", @"Montana", @"Nebraska", @"Nevada", @"New Hampshire", @"New Jersey", @"New Mexico", @"New York", @"North Carolina", @"North Dakota", @"Ohio", @"Oklahoma", @"Oregon", @"Pennsylvania", @"Rhode Island", @"South Carolina", @"South Dakota", @"Tennessee", @"Texas", @"Utah", @"Vermont", @"Virginia", @"Washington", @"West Virginia", @"Wisconsin", @"Wyoming"];
@@ -45,6 +44,8 @@
     
     self.searchBar = [UISearchBar new];
     self.searchBar.delegate = self;
+    self.searchBar.showsCancelButton = YES;
+
     CGRect searchFrame = self.searchBar.frame;
     searchFrame.origin.y = 64.0;
     searchFrame.size.width = self.view.frame.size.width;
@@ -94,6 +95,10 @@
     cell.textLabel.text = self.items[indexPath.row];
     
     return cell;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {

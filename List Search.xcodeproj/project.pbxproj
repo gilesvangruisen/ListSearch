@@ -20,7 +20,6 @@
 		5005CEA218D1727E00BC9601 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5005CEA018D1727E00BC9601 /* InfoPlist.strings */; };
 		5005CEA418D1727E00BC9601 /* List_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5005CEA318D1727E00BC9601 /* List_SearchTests.m */; };
 		504818A518D28EF8002B6F7B /* TableSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504818A418D28EF8002B6F7B /* TableSearchViewController.m */; };
-		504818A818D2931B002B6F7B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504818A718D2931B002B6F7B /* MasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +51,6 @@
 		5005CEA318D1727E00BC9601 /* List_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = List_SearchTests.m; sourceTree = "<group>"; };
 		504818A318D28EF8002B6F7B /* TableSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSearchViewController.h; sourceTree = "<group>"; };
 		504818A418D28EF8002B6F7B /* TableSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSearchViewController.m; sourceTree = "<group>"; };
-		504818A618D2931B002B6F7B /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		504818A718D2931B002B6F7B /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +112,6 @@
 			children = (
 				5005CE8D18D1727E00BC9601 /* AppDelegate.h */,
 				5005CE8E18D1727E00BC9601 /* AppDelegate.m */,
-				504818A618D2931B002B6F7B /* MasterViewController.h */,
-				504818A718D2931B002B6F7B /* MasterViewController.m */,
 				504818A318D28EF8002B6F7B /* TableSearchViewController.h */,
 				504818A418D28EF8002B6F7B /* TableSearchViewController.m */,
 				5005CE9018D1727E00BC9601 /* Images.xcassets */,
@@ -249,7 +244,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504818A818D2931B002B6F7B /* MasterViewController.m in Sources */,
 				504818A518D28EF8002B6F7B /* TableSearchViewController.m in Sources */,
 				5005CE8F18D1727E00BC9601 /* AppDelegate.m in Sources */,
 				5005CE8B18D1727E00BC9601 /* main.m in Sources */,
